@@ -1,0 +1,19 @@
+# spring boot 暴露健康检查相关url
+management:
+  endpoint:
+    health:
+      show-details: always
+# 部分中间件的健康检查（会影响health接口的使用）
+#  health:
+#    defaults:
+#      enabled: true
+#    elasticsearch:
+#      enabled: false
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true
+
+knife4j:
+  enable: true

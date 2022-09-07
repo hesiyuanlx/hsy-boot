@@ -1,0 +1,48 @@
+# spring 基础配置
+spring:
+  application:
+    name: audit-admin
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+    async:
+      request-timeout: 5000
+  profiles:
+    active: test
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 5MB
+
+# http 端口
+server:
+  port: 8081
+  servlet:
+    context-path: /api/boot/admin
+
+# 日志模块
+logging:
+  config: classpath:log4j2.xml
+
+# spring boot 暴露健康检查相关url
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,mappings,info,env,prometheus,metrics,httptrace,threaddump,heapdump,springmetrics
+      base-path: "/"
+  metrics:
+    export:
+      datadog:
+        descriptions: false
+    enable:
+      integration: false
+      file: false
+      jvm: false
+      logback: false
+      processor: false
+      uptime: true
+  server:
+    port: 8081
+
+
