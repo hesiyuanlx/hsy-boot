@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
  * @date 2022-09-07 4:49 PM
  **/
 @Configuration
-public class SpringfoxConfiguration {
+public class SpringfoxAdapterConfiguration {
 
     @Bean
     public BeanPostProcessor springfoxHandlerProviderBeanPostProcessor() {

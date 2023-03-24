@@ -10,10 +10,16 @@
 
     <modules>
         <module>boot-admin</module>
+        <module>boot-mybatis</module>
+        <module>boot-test</module>
+        <module>boot-lettuce</module>
+        <module>boot-jira</module>
     </modules>
 
     <properties>
-        <project-hsy-boot-admin>0.0.1-SNAPSHOT</project-hsy-boot-admin>
+        <project-boot-admin>0.0.1-SNAPSHOT</project-boot-admin>
+        <project-boot-mybatis>0.0.1-SNAPSHOT</project-boot-mybatis>
+
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -43,7 +49,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- log4j2依赖 -->
+        <!-- 日志框架 log4j2依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-log4j2</artifactId>
@@ -99,24 +105,41 @@
             <artifactId>disruptor</artifactId>
             <version>3.4.4</version>
         </dependency>
-
-        <!-- 测试依赖 -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <!-- 第三方工具包依赖 -->
+        <!-- json 工具包 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.83</version>
         </dependency>
+        <!-- lombok注解 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.22</version>
+        </dependency>
+        <!-- 集合操作 -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+        <!-- 测试依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>log4j-api</artifactId>
+                    <groupId>org.apache.logging.log4j</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

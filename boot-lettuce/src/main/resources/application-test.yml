@@ -1,0 +1,38 @@
+# 测试环境
+spring:
+  redis:
+    cluster:
+      nodes:
+        - 192.168.17.56:6479
+        - 192.168.17.56:6579
+        - 192.168.17.56:6679
+    password: yCVnjyC5YRhA
+    lettuce:
+      pool:
+        max-active: 5
+        max-idle: 5
+        min-idle: 0
+        max-wait: 1s
+        enabled: true
+    connect-timeout: 10s
+    timeout: 10s
+
+redis:
+  addrs: 192.168.17.56:6479,192.168.17.56:6579,192.168.17.56:6679
+  password: yCVnjyC5YRhA
+  conn:
+    timeout: 15000
+  so:
+    timeout: 15000
+  max:
+    redirections: 20
+  pool:
+    max:
+      total: 50
+      idle: 10
+      wait:
+        ms: 50
+    on:
+      borrow: true
+      return: true
+

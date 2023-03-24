@@ -1,4 +1,4 @@
-package cn.hsy.boot.admin;
+package cn.hsy.boot.lettuce;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +21,7 @@ public class AdminBootStrap {
 
         // 添加退出钩子程序
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            log.info("SHUT_DOWN_MSG : Finished to boot admin bootstrap!");
+            log.info("SHUT_DOWN_MSG : Finished to boot lettuce bootstrap!");
         }));
 
         log.info("Successful to start audit admin bootstrap.");
